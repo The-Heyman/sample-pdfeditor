@@ -8,10 +8,9 @@ import 'app/app.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await FlutterDownloader.initialize(
-      debug: true,
-      ignoreSsl: true
-      );
+  await FlutterDownloader.initialize(debug: true, ignoreSsl: true);
   await Permission.storage.request();
-  runApp(const App(),);
+  runApp(
+    const App(),
+  );
 }
