@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
                 (InAppWebViewController inAppWebViewController,
                     DownloadStartRequest downloadStartRequest) async {
               var dio = Dio();
-              var dir = await getApplicationDocumentsDirectory();
+              Directory dir = Directory('/storage/emulated/0/Download');
               var file = File(
                   "${dir.path}/${downloadStartRequest.suggestedFilename}");
               print(file);
