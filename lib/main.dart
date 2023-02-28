@@ -9,7 +9,8 @@ import 'app/app.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FlutterDownloader.initialize(
-      debug: true // optional: set false to disable printing logs to console
+      debug: true,
+      ignoreSsl: true
       );
   await Permission.storage.request();
   runApp(const App(),);
