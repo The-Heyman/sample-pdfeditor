@@ -1,4 +1,3 @@
-
 import 'dart:isolate';
 import 'dart:ui';
 
@@ -76,8 +75,8 @@ class _HomeState extends State<Home> {
                 print("${downloadStartRequest.url.path}.pdf");
                 print(downloadStartRequest.url.path);
 
-
-                downloadFile(downloadStartRequest.url.path,downloadStartRequest.suggestedFilename);
+                downloadFile(downloadStartRequest.url.path,
+                    downloadStartRequest.suggestedFilename);
               },
             ),
           )

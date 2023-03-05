@@ -15,7 +15,7 @@ Future<void> downloadFile(String url, [String? filename]) async {
     final taskId = await FlutterDownloader.enqueue(
         url: url,
         headers: {},
-        savedDir: downloadDir.path,
+        savedDir: (await getApplicationDocumentsDirectory()).path,
         saveInPublicStorage: true,
         fileName: filename);
   }
