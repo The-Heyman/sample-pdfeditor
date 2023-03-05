@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_downloader/flutter_downloader.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 Future<void> downloadFile(String url, [String? filename]) async {
@@ -14,7 +15,7 @@ Future<void> downloadFile(String url, [String? filename]) async {
     final taskId = await FlutterDownloader.enqueue(
         url: url,
         headers: {},
-        savedDir: downloadDir.path,
+        savedDir: (await getApplicationDocumentsDirectory()).path,
         saveInPublicStorage: true,
         fileName: filename);
   }
